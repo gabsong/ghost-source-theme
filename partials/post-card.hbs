@@ -20,7 +20,19 @@
             {{#if primary_tag}}
                 <p class="gh-card-tag">{{primary_tag.name}}</p>
             {{/if}}
-            <h3 class="gh-card-title is-title">{{title}}</h3>
+            <h3 class="gh-card-title is-title">
+                {{#if @custom.enable_title_links}}
+                    {{{title}}}
+                {{else}}
+                    {{title}}
+                {{/if}}
+            </h3>
+
+            {{!-- customization start --}}
+            <div class="post-card-body{{#if @custom.enable_drop_caps_on_posts}} drop-cap{{/if}}">{{content}}</div>
+            {{!-- customizaton end --}}
+
+            
             {{#if custom_excerpt}}
                 <p class="gh-card-excerpt is-body">{{custom_excerpt}}</p>
             {{/if}}
@@ -29,6 +41,7 @@
                     <p class="gh-card-excerpt is-body">{{excerpt}}</p>
                 {{/if}}
             {{/unless}}
+           
             <footer class="gh-card-meta">
                 {{#unless access}}
                     {{^has visibility="public"}}

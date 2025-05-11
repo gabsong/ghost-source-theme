@@ -197,6 +197,12 @@
                 "default": true,
                 "group": "post"
             },
+            "enable_title_links": {
+                "type": "boolean",
+                "default": false,
+                "group": "post",
+                "description": "Enable custom links in post titles"
+            },
             "enable_drop_caps_on_posts": {
                 "type": "boolean",
                 "default": false,
